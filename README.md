@@ -13,7 +13,7 @@ Tkinter；Matplotlib、以及Tkagg，一種可將Matplotlib的圖像顯示在Tki
 二、	能夠對前述的原始函數進行某種限制，並且同樣反映在圖像上。
 三、	能夠根據被限制後的函數進行數值分析求導數或積分的近似值。
 GUI形如
- ![image][P1.png]
+ ![image](P1.png)
 左列選項為函數，從上到下分別為斜坡、平方、正弦、正切函數四個選項，選定後按下左下角的Generate Plot按鈕即可在上方空白處成圖像。
 
 中間為使用的近似方式，從上到下分別為無動作、Forward finite differentiation、second order differentiation、以及黎曼積分，選定後同樣按下Generate Plot即可生成該函數的近似導數或積分之結果，最下方的Clear all則會清除所有圖像，每一次Generate Plot都會疊加在上一次生成的圖像上，不會主動清除，所以須以Clear all清除圖像。
@@ -22,12 +22,12 @@ GUI形如
 
 成果：
 1.對於設置上下限的正弦函數的反應
- ![image][P2.png]
+ ![image](P2.png)
  	 	 
 對於絕對值被限制在0.5以下的正弦函數而言，Forward difference在轉折處因斜率突變出現大幅度的跳躍，Second_order_diff則顯示轉折處具有極高或極低的反曲率。
 
 2.對於Unit ramp的反應
- ![image][P3.png]
+ ![image](P3.png)
  	 	 
 在unit ramp造成的轉折點上，Forward difference法求出的導數有一個跳躍，類似於Unit step，Second order difference則在該點產生一個極大值，類似脈衝函數。
 
@@ -36,9 +36,9 @@ GUI形如
 討論：
 似乎這種基於數值方法求近似解的方式，可以避免平常討論解析解中經常出現棘手的不連續，Second order difference還能以非常具體的方式標示出這些不連續處的位置。(藍)
 左圖黃線為|sin(x)|,右黃線為unit ramp/x
-![image][P4.png]
+![image](P4.png)
 但有時也會出現一些不合理的結果，例如對正切函數求黎曼積分時，不定積分竟然是漸漸降低的(黃)，而非單純的週期函數，這可能是因為數據點不夠密集而導致每個周期都累積一些誤差，到後來越加越多。
-![image][P5.png] 
+![image](P5.png) 
 
 僅就求導數或積分而言，數值方法相對於解析解的優勢便是可以用相對小的成本去追蹤一個奇怪的原始函數，雖然求出的解不算準確，但能給出很多暗示來作進一步的推測，之後可以繼續對這個GUI做擴充，加入更多可改的參數或新選項，使這個小工具變得更豐富。
 
